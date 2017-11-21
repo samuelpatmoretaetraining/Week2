@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    tools:context="com.muelpatmore.week1assignment.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/ivGFLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="@string/green_flag_logo_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/splash_guideline_10y"
+        app:srcCompat="@drawable/logo_green_flag" />
+
+    <TextView
+        android:id="@+id/tvSplashText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/museo_sans_500"
+        android:text="@string/splash_text"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivGFLogo"
+        app:layout_constraintStart_toStartOf="@+id/ivGFLogo"
+        app:layout_constraintTop_toTopOf="@+id/splash_guideline_30y" />
+
+    <ImageView
+        android:id="@+id/ivTick1"
+        android:layout_width="20sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:contentDescription="@string/green_tick_desc"
+        app:layout_constraintStart_toStartOf="@+id/tvSplashText"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplashText"
+        app:srcCompat="@drawable/tick" />
+
+    <TextView
+        android:id="@+id/tvSplashTick1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/museo_sans_300"
+        android:text="@string/splash_tick1"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTick1"
+        app:layout_constraintStart_toEndOf="@+id/ivTick1"
+        app:layout_constraintTop_toTopOf="@+id/ivTick1" />
+
+    <ImageView
+        android:id="@+id/ivTick2"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/green_tick_desc"
+        app:layout_constraintStart_toStartOf="@+id/ivTick1"
+        app:layout_constraintTop_toBottomOf="@+id/ivTick1"
+        app:srcCompat="@drawable/tick" />
+
+    <TextView
+        android:id="@+id/tvSplashTick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/museo_sans_300"
+        android:text="@string/splash_tick2"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTick2"
+        app:layout_constraintStart_toEndOf="@+id/ivTick2"
+        app:layout_constraintTop_toTopOf="@+id/ivTick2" />
+
+    <ImageView
+        android:id="@+id/ivTick3"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/green_tick_desc"
+        app:layout_constraintStart_toStartOf="@+id/ivTick2"
+        app:layout_constraintTop_toBottomOf="@+id/ivTick2"
+        app:srcCompat="@drawable/tick" />
+
+    <TextView
+        android:id="@+id/tvSplashTick3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/museo_sans_300"
+        android:text="@string/splash_tick3"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTick3"
+        app:layout_constraintStart_toEndOf="@+id/ivTick3"
+        app:layout_constraintTop_toTopOf="@+id/ivTick3" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@drawable/gradient_button_background"
+        android:onClick="clickHandler"
+        android:text="@string/login"
+        app:layout_constraintEnd_toStartOf="@+id/splash_guideline_90x"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/splash_guideline_10x"
+        app:layout_constraintTop_toTopOf="@+id/splash_guideline_85y" />
+
+    <Button
+        android:id="@+id/btnSplash"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@drawable/gradient_button_background"
+        android:onClick="clickHandler"
+        android:text="@string/create_account"
+        app:layout_constraintBottom_toTopOf="@+id/splash_guideline_95y"
+        app:layout_constraintEnd_toStartOf="@+id/splash_guideline_90x"
+        app:layout_constraintStart_toStartOf="@+id/splash_guideline_10x" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_10x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_90x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_10y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_30y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_85y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/splash_guideline_95y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.95" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Customer Viewer</string>
+
+    <!-- splash_screen.xml view strings -->
+    <string name="splash_tick1">Care health updates</string>
+    <string name="splash_tick2">Request a rescue online</string>
+    <string name="splash_tick3">Policy information</string>
+    <string name="splash_text">Green Flag customers can create an account to access</string>
+    <string name="create_account">Create an account</string>
+    <string name="next">Next</string>
+
+    <!-- splash_screen.xml content description strings -->
+    <string name="green_tick_desc">Green Tick</string>
+    <string name="green_flag_logo_desc">Green flag company logo with tagline and Registered Trademark.</string>
+
+    <string name="username">Username</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="password1">Create password</string>
+    <string name="password2">Repeat password</string>
+    <string name="passwordHint">See criteria below</string>
+    <string name="passwordCriteria">Your password should have a minimum of 8 characters and contain at least one number, one uppercase and one lower case letter. You can use special characters.</string>
+
+    <!-- activity_create_customer.xml. content strings -->
+    <string name="mForename">Forename</string>
+    <string name="mSurname">Surname</string>
+    <string name="dOB">YYYY.MM.DD</string>
+    <string name="date_picker_result_value">%1$s . %2$s . %3$s</string>
+    <string name="nationality">Nationality</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="ocelot">Ocelot</string>
+    <string name="notAnOcelot">Not an Ocelot</string>
+    <string name="address">Address</string>
+    <string name="addPhoto">Add photo</string>
+    <string name="datePicker">Date Picker</string>
+    <string name="submit">Submit</string>
+
+    <!-- activity_login.xml content strings -->
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="rememberMe">Remember me</string>
+
+    <!-- activity_customer_list.xml content strings -->
+    <string name="addCustomer">Add Customer</string>
+    <string name="logout">Logout</string>
+
+    <!-- customer_card_layout.xml content strings -->
+    <string name="defaultName">Name Unknown</string>
+    <string name="defaultDob">Age unknown</string>
+    <string name="defaultNationality">Nationality unknown</string>
+    <string name="defaultGender">Gender unknown</string>
+    <string name="defaultAddress">Address unknown</string>
+    <string name="descPhoto">Photo of the customer</string>
+
+</resources>
