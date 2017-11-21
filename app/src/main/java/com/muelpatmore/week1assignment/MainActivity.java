@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.muelpatmore.week1assignment.fragments.CustomerListViewModel;
 import com.muelpatmore.week1assignment.fragments.LoginViewModel;
 import com.muelpatmore.week1assignment.fragments.SplashViewModel;
 import com.muelpatmore.week1assignment.realm.RealmController;
@@ -101,6 +102,15 @@ public class MainActivity extends AppCompatActivity implements ButtonClicked {
                     .addToBackStack("Register Login Screen")
                     .commit();
 
+        }
+    }
+
+    public void addCustomer(View v) {
+        if (v.getId() == R.id.btnAddCustomer) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentFrame, CreateCustomerViewModel.getInstance())
+                    .addToBackStack("Customer View Screen")
+                    .commit();
         }
     }
 }

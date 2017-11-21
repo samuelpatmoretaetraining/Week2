@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Class to manage the
  * Created by Samuel on 18/11/2017.
  */
-class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.mCustomerViewHolder> {
+public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.mCustomerViewHolder> {
 
     private static final String TAG = "CustomerAdapter";
     private ArrayList<RealmCustomer> mRealmCustomers;

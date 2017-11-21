@@ -13,4 +13,5 @@ public interface ButtonClicked {
     void loginSubmitted(View v);
     void registerLogin(View v);
     void loginRegistered(View v, RealmLoginDetails details);
+    void addCustomer(View v);
 }

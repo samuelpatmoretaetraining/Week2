@@ -1,18 +1,18 @@
-package com.muelpatmore.week1assignment;
+package com.muelpatmore.week1assignment.fragments;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 
-import com.muelpatmore.week1assignment.fragments.LoginViewModel;
+import com.muelpatmore.week1assignment.ButtonClicked;
+import com.muelpatmore.week1assignment.CustomerAdapter;
+import com.muelpatmore.week1assignment.R;
 import com.muelpatmore.week1assignment.realm.RealmController;
 import com.muelpatmore.week1assignment.realm.RealmCustomer;
 
@@ -27,12 +27,16 @@ public class CustomerListViewModel extends Fragment {
     private static CustomerListViewModel mInstance;
 
     private CustomerListModel mCustomerListModel;
+
     private ButtonClicked mButtonClicked;
     private RecyclerView mRecyclerView;
+
     private CustomerAdapter mCustomerAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private CustomerAdapter mAdapter;
     private String mUsername = null;
+
+    private Button btnAddCustomer, btnLogout;
 
     public static CustomerListViewModel getInstance()  {
         // double lock to prevent two processes creating a SplashViewModel simultaneously
@@ -64,22 +68,45 @@ public class CustomerListViewModel extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setRetainInstance(true);
 
+        btnAddCustomer = (Button) view.findViewById(R.id.btnAddCustomer);
+        btnAddCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mButtonClicked.addCustomer(v);
+            }
+        });
+
+        btnLogout = (Button) view.findViewById(R.id.btnLogout);
+
+
         mCustomerListModel = new CustomerListModel();
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rvCustomer);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // retrieve customer data
-        ArrayList<RealmCustomer> customerData = mCustomerListModel.getCustomerData();
-
         // specify an adapter
-        mAdapter = new CustomerAdapter(customerData, 0, getContext());
+        mAdapter = new CustomerAdapter(mCustomerListModel.getCustomerData(), 0, getContext());
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    /**
+     * Created by Samuel on 21/11/2017.
+     */
+
+    public static class CustomerListModel {
+
+        private RealmController mRealmController;
+
+        public CustomerListModel() {
+            // retrieve RealmController
+            mRealmController = RealmController.getInstance();
+        }
+
+        public ArrayList<RealmCustomer> getCustomerData() {
+            return mRealmController.getCustomerList();
+        }
     }
 }
