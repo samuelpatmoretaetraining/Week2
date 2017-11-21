@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements ButtonClicked {
         if (v.getId() == R.id.btnSubmitLogin) {
             //ToDo change target fragment to customer view (when implemented as fragament
             fragmentManager.beginTransaction()
-                    .replace(R.id.fragmentFrame, SplashViewModel.getInstance())
+                    .replace(R.id.fragmentFrame, CustomerListViewModel.getInstance())
                     .addToBackStack("Login Screen")
                     .commit();
         }

@@ -64,5 +64,11 @@ public class SplashViewModel extends Fragment {
             }
         });
         btnRegister = view.findViewById(R.id.btnRegister);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonClicked.registerLogin(v);
+            }
+        });
     }
 }
