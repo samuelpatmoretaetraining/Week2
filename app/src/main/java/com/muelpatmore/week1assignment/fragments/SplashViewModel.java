@@ -1,4 +1,4 @@
-package com.muelpatmore.week1assignment;
+package com.muelpatmore.week1assignment.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.muelpatmore.week1assignment.ButtonClicked;
+import com.muelpatmore.week1assignment.R;
 
 /**
  * Created by Samuel on 21/11/2017.

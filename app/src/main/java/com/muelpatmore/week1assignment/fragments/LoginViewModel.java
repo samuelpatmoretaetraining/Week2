@@ -6,25 +6,22 @@
  * Attribution-NonCommercial-NoDerivs 2.0 UK: England & Wales (CC BY-NC-ND 2.0 UK)
  */
 
-package com.muelpatmore.week1assignment;
+package com.muelpatmore.week1assignment.fragments;
 
 
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.muelpatmore.week1assignment.realm.RealmController;
-import com.muelpatmore.week1assignment.realm.RealmLoginDetails;
+import com.muelpatmore.week1assignment.ButtonClicked;
+import com.muelpatmore.week1assignment.R;
 
 
 /**
@@ -39,7 +36,7 @@ public class LoginViewModel extends Fragment{
     private ButtonClicked mButtonClicked;
 
     private EditText etUsername, etPassword;
-    //private Button btnLogin;
+    private Button btnLogin;
     private CheckBox cbRememberMe;
 
     public static LoginViewModel getInstance()  {
@@ -73,11 +70,19 @@ public class LoginViewModel extends Fragment{
         setRetainInstance(true);
         etUsername = view.findViewById(R.id.etUsername);
         etPassword = view.findViewById(R.id.etPassword);
-        //btnLogin = findViewById(R.id.btnLogin);
         cbRememberMe = view.findViewById(R.id.cbRememberMe);
+
+        btnLogin = view.findViewById(R.id.btnSubmitLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginAttempted(v);
+            }
+        });
     }
     
-    private void loginAttempted() {
-        Toast.makeText(getActivity(),"Login submitted",Toast.LENGTH_SHORT).show();
+    private void loginAttempted(View v) {
+        //ToDo validate login before allowing submission
+        mButtonClicked.loginSubmitted(v);
     }
 }

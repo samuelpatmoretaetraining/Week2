@@ -57,7 +57,7 @@
         android:fontFamily="@font/museo_sans_300"
         android:text="@string/emailAddress"
         android:textColor="@color/colorWhite"
-        android:textSize="22sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_90x"
         app:layout_constraintStart_toStartOf="@+id/guideline_10x"
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
@@ -85,7 +85,7 @@
         android:fontFamily="@font/museo_sans_300"
         android:text="@string/username"
         android:textColor="@color/colorWhite"
-        android:textSize="22sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_90x"
         app:layout_constraintStart_toStartOf="@+id/guideline_10x"
         app:layout_constraintTop_toBottomOf="@+id/vBorder1" />
@@ -111,7 +111,7 @@
         android:fontFamily="@font/museo_sans_300"
         android:text="@string/password1"
         android:textColor="@color/colorWhite"
-        android:textSize="22sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -138,7 +138,7 @@
         android:fontFamily="@font/museo_sans_300"
         android:text="@string/password2"
         android:textColor="@color/colorWhite"
-        android:textSize="22sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/etPassword1"
         app:layout_constraintStart_toStartOf="@+id/etPassword1"
         app:layout_constraintTop_toBottomOf="@+id/etPassword1" />
@@ -157,7 +157,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPassword2" />
 
     <Button
-        android:id="@+id/btnSplashLogin"
+        android:id="@+id/btnRegisterLogin"
         android:layout_width="0dp"
         android:layout_height="51dp"
         android:layout_marginBottom="8dp"
@@ -165,7 +165,6 @@
         android:layout_marginStart="24dp"
         android:background="@drawable/gradient_button_background"
         android:fontFamily="@font/museo_sans_500"
-        android:onClick="clickHandler"
         android:text="@string/next"
         android:textAllCaps="false"
         android:textSize="25sp"
@@ -194,7 +193,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/museo_sans_300"
         android:text="@string/passwordCriteria"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btnSplashLogin"
         app:layout_constraintEnd_toEndOf="@+id/etPassword2"
         app:layout_constraintStart_toStartOf="@+id/etPassword2"
