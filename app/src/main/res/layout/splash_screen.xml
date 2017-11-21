@@ -109,7 +109,6 @@
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:background="@drawable/gradient_button_background"
-        android:onClick="clickHandler"
         android:text="@string/login"
         app:layout_constraintEnd_toStartOf="@+id/splash_guideline_90x"
         app:layout_constraintHorizontal_bias="0.0"
@@ -117,11 +116,10 @@
         app:layout_constraintTop_toTopOf="@+id/splash_guideline_85y" />
 
     <Button
-        android:id="@+id/btnSplash"
+        android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:background="@drawable/gradient_button_background"
-        android:onClick="clickHandler"
         android:text="@string/create_account"
         app:layout_constraintBottom_toTopOf="@+id/splash_guideline_95y"
         app:layout_constraintEnd_toStartOf="@+id/splash_guideline_90x"

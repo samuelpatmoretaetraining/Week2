@@ -10,24 +10,23 @@ package com.muelpatmore.week1assignment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.muelpatmore.week1assignment.realm.RealmController;
 
-import io.realm.Realm;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ButtonClicked {
 
     private static final String TAG = "MainActivity";
 
     private RealmController realmController;
-    private Button btnSplash;
-
+    private FrameLayout fragmentFrame;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,28 +43,24 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.activity_main);
+        fragmentFrame = (FrameLayout) findViewById(R.id.fragmentFrame);
+        fragmentManager = getSupportFragmentManager();
 
-        btnSplash = findViewById(R.id.btnSplash);
 
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction()
+                    .add(R.id.fragmentFrame, SplashViewModel.getSplashView())
+                    .commit();
+        }
 
     }
 
-    public void clickHandler(View v) {
-        switch (v.getId()) {
-            case  R.id.btnSplash :
-//
-                Log.i(TAG, "Creat account button clicked");
-                Intent intentCreate = new Intent(MainActivity.this, CreateAccountActivity.class);
-                startActivity(intentCreate);
-                break;
+    public void loginClicked(View v) {
+        if (v.getId() == R.id.btnLogin) {
+            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+            //fragmentManager.beginTransaction().add(R.id.fragmentFrame, new BlankFragment()).commit();
 
-            case  R.id.btnLogin :
-//
-                Log.i(TAG, "Login button clicked");
-                Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intentLogin);
-                break;
         }
     }
 }
