@@ -24,8 +24,6 @@ import com.muelpatmore.week1assignment.realm.RealmLoginDetails;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import io.realm.Realm;
-
 /**
  * Class to manage the Create Account Activity. Functions covering click handling, value
  * verification and adding new users to a Realm database.
@@ -57,7 +55,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword1 = findViewById(R.id.etPassword1);
         etPassword2 = findViewById(R.id.etPassword2);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnSplashLogin);
         ivBack = findViewById(R.id.ivBack);
 
         realmController = RealmController.getInstance();
@@ -72,7 +70,7 @@ public class CreateAccountActivity extends AppCompatActivity {
      */
     public void clickHandler(View v) {
         switch (v.getId()) {
-            case R.id.btnLogin :
+            case R.id.btnSplashLogin:
                 loginButtonClicked();
                 break;
 

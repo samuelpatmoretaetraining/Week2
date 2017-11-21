@@ -105,7 +105,7 @@
         app:layout_constraintTop_toTopOf="@+id/ivTick3" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSplashLogin"
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:background="@drawable/gradient_button_background"

@@ -8,4 +8,5 @@ import android.view.View;
 
 public interface ButtonClicked {
     void loginClicked(View v);
+    void loginSubmitted(View v);
 }

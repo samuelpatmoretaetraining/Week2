@@ -21,8 +21,6 @@ import android.widget.Toast;
 import com.muelpatmore.week1assignment.realm.RealmController;
 import com.muelpatmore.week1assignment.realm.RealmLoginDetails;
 
-import io.realm.Realm;
-
 public class LoginActivity extends AppCompatActivity {
 
     private final static String TAG = "LoginActivity";
@@ -66,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void clickHandler(View v) {
         switch (v.getId()) {
-            case R.id.btnLogin :
+            case R.id.btnSplashLogin:
                 Log.i(TAG, "Login button clicked");
 
                 String username = etUsername.getText().toString();

@@ -37,11 +37,6 @@ public class MainActivity extends AppCompatActivity implements ButtonClicked {
 
         // Check user preferences and skip splash & and login screens if the user is logged in.
         SharedPreferences settings = getSharedPreferences(Constants.PREFS_NAME, 0);
-        if (settings.getBoolean(Constants.PREFS_LOGGED_IN, false)) {
-            Intent customerViewIntent = new Intent(MainActivity.this, CustomerListActivity.class);
-            startActivity(customerViewIntent);
-            finish();
-        }
 
         setContentView(R.layout.activity_main);
         fragmentFrame = (FrameLayout) findViewById(R.id.fragmentFrame);
@@ -50,17 +45,25 @@ public class MainActivity extends AppCompatActivity implements ButtonClicked {
 
         if (savedInstanceState == null) {
             fragmentManager.beginTransaction()
-                    .add(R.id.fragmentFrame, SplashViewModel.getSplashView())
+                    .add(R.id.fragmentFrame, SplashViewModel.getInstance())
                     .commit();
         }
 
     }
 
     public void loginClicked(View v) {
-        if (v.getId() == R.id.btnLogin) {
+        if (v.getId() == R.id.btnSplashLogin) {
             Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-            //fragmentManager.beginTransaction().add(R.id.fragmentFrame, new BlankFragment()).commit();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.fragmentFrame, LoginViewModel.getInstance())
+                    .addToBackStack("Splash Screen")
+                    .commit();
+        }
+    }
 
+    public void loginSubmitted(View v) {
+        if (v.getId() == R.id.btnSubmitLogin) {
+            Toast.makeText(getApplicationContext(), "Login submitted", Toast.LENGTH_SHORT).show();
         }
     }
 }

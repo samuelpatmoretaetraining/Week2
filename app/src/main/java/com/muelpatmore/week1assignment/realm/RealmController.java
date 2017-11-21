@@ -43,7 +43,7 @@ public class RealmController extends AppCompatActivity {
 
 
     /**
-     * Singleton function to ensure only one instance of the RealmController is accessible
+     * FragmentSingleton function to ensure only one instance of the RealmController is accessible
      * @return RealmController object
      */
     public static RealmController getInstance() {

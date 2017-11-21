@@ -25,7 +25,6 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".CreateCustomerActivity" />
         <activity android:name=".CustomerListActivity" />
-        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>

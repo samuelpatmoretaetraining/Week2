@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.muelpatmore.week1assignment.realm.RealmController;
-
 /**
  * Created by Samuel on 21/11/2017.
  */
@@ -23,12 +21,12 @@ public class SplashViewModel extends Fragment {
 
     private Button btnLogin, btnRegister;
 
-    public static SplashViewModel getSplashView()  {
+    public static SplashViewModel getInstance()  {
         // double lock to prevent two processes creating a SplashViewModel simultaneously
-        synchronized (RealmController.class) {
+        synchronized (SplashViewModel.class) {
             // create RealmController instance if none exists
             if (instance == null) {
-                synchronized (RealmController.class) {
+                synchronized (SplashViewModel.class) {
                     instance = new SplashViewModel();
                 }
             }
@@ -55,7 +53,7 @@ public class SplashViewModel extends Fragment {
 
         //ToDo Check with User Preferences if the user is logged in, if so bypass LoginActivity to  CustomerView
 
-        btnLogin = view.findViewById(R.id.btnLogin);
+        btnLogin = view.findViewById(R.id.btnSplashLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
